@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    background-color: rgba(30,30,30);
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#tic-tac-toe{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tic-tac-toe-wrapper{
+    width: 80vh;
+    height: 80vh;
+    position: relative;
+}
+
+.gameboard{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.gameCell{
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: -1px -1px 0 0 black, 0 -1px 0 0 black, -1px 0 0 0 black;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.gameCell:hover{
+    background-color: lightgray;
+}
+
+.gameCell p {
+    margin: 0;
+    font-size: 6rem;
+    text-align: center;
+}
+
+.game-options button{
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none;
+  background: none;
+    box-shadow: none;
+    transition: .5s;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    
+}
+.game-options button:hover{
+    transition: .5s;
+    color: gray;
+}
+
+.score{
+    position: absolute;
+}
+.game-options{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
