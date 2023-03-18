@@ -15,6 +15,9 @@ class Gameboard {
         [0, 4, 8],
         [2, 4, 6],
       ];
+      this.difficulty = "easy";
+      this.aiPlayer = "O";
+      this.humanPlayer = "X";
     }
   
     getGameBoard() {
@@ -54,7 +57,57 @@ class Gameboard {
         this.gameboard[cellIndex] = "X";
         console.log(this.gameboard);
         this.checkForWinner();
+        this.computerPlay();
       }
+    }
+
+    setDifficulty(difficulty) {
+      this.difficulty = difficulty;
+    }
+  
+    setAiPlayer(aiPlayer) {
+      this.aiPlayer = aiPlayer;
+      this.humanPlayer = aiPlayer === "O" ? "X" : "O";
+    }
+
+    computerPlay() {
+      if (this.difficulty === "easy") {
+        this.easyComputerPlay();
+      } else if (this.difficulty === "medium") {
+        this.mediumComputerPlay();
+      } else if (this.difficulty === "hard") {
+        this.hardComputerPlay();
+      }
+    }
+  
+    easyComputerPlay() {
+      const availableCells = this.getAvailableCells();
+      const randomIndex = Math.floor(Math.random() * availableCells.length);
+      const cellIndex = availableCells[randomIndex];
+      const cell = document.getElementById(`cell-${cellIndex}`);
+      const cellContent = cell.querySelector("p");
+      cellContent.textContent = this.aiPlayer;
+      this.gameboard[cellIndex] = this.aiPlayer;
+      console.log(this.gameboard);
+      this.checkForWinner();
+    }
+  
+    mediumComputerPlay() {
+      // TODO: Implement medium AI
+    }
+  
+    hardComputerPlay() {
+      // TODO: Implement hard AI
+    }
+  
+    getAvailableCells() {
+      const availableCells = [];
+      for (let i = 0; i < this.gameboard.length; i++) {
+        if (this.gameboard[i] === "") {
+          availableCells.push(i);
+        }
+      }
+      return availableCells;
     }
   
     checkForWinner() {

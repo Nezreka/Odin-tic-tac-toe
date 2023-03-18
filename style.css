@@ -67,8 +67,9 @@ body{
     color: gray;
 }
 
-.score{
+.game-info{
     position: absolute;
+    
 }
 .game-options{
     position: absolute;
