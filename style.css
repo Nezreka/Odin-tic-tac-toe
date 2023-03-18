@@ -45,7 +45,7 @@ body{
 .gameCell p {
     margin: 0;
     font-size: 6rem;
-    text-align: center;
+    text-align: center; 
 }
 
 .game-options button{

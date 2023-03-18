@@ -74,7 +74,7 @@ class Gameboard {
   
     handleWinner(winner) {
       alert(`${winner} wins!`);
-      this.startNewGame();
+      this.startNewGame(); 
     }
   
     addRestartButton() {
